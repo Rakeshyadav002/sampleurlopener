@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flag Found</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow-x: hidden;
+
+      background:
+        radial-gradient(circle at center, #172554 0%, #080b18 45%, #020617 100%);
+
+      font-family: "Courier New", monospace;
+      color: #fff;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+
+      background-image:
+        linear-gradient(rgba(0,255,200,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,200,0.025) 1px, transparent 1px);
+
+      background-size: 40px 40px;
+    }
+
+    .container {
+      width: min(100%, 720px);
+      padding: clamp(25px, 6vw, 50px);
+      text-align: center;
+
+      border: 1px solid rgba(0, 255, 200, 0.35);
+      border-radius: 20px;
+
+      background: rgba(5, 15, 30, 0.75);
+      box-shadow:
+        0 0 30px rgba(0, 255, 200, 0.15),
+        inset 0 0 30px rgba(0, 255, 200, 0.04);
+
+      backdrop-filter: blur(10px);
+
+      animation: appear 0.8s ease-out;
+    }
+
+    .status {
+      color: #00ffc8;
+      font-size: clamp(11px, 2.5vw, 14px);
+      letter-spacing: clamp(2px, 1vw, 4px);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(30px, 9vw, 58px);
+      line-height: 1.1;
+      margin-bottom: 25px;
+
+      text-shadow:
+        0 0 10px #00ffc8,
+        0 0 25px rgba(0, 255, 200, 0.5);
+    }
+
+    .flag {
+      display: block;
+      width: 100%;
+      padding: 15px 12px;
+
+      border: 1px solid #00ffc8;
+      border-radius: 10px;
+
+      color: #00ffc8;
+      background: rgba(0, 255, 200, 0.06);
+
+      font-size: clamp(13px, 4vw, 26px);
+      line-height: 1.5;
+
+      /* Prevent long flag strings from overflowing */
+      overflow-wrap: anywhere;
+      word-break: break-word;
+
+      box-shadow: 0 0 20px rgba(0, 255, 200, 0.15);
+      user-select: all;
+    }
+
+    .hint {
+      margin-top: 22px;
+      color: #64748b;
+      font-size: clamp(10px, 2.8vw, 12px);
+      line-height: 1.6;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Small phones */
+    @media (max-width: 400px) {
+      body {
+        padding: 12px;
+      }
+
+      .container {
+        padding: 25px 16px;
+        border-radius: 15px;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      .flag {
+        padding: 13px 10px;
+      }
+    }
+
+    /* Touch devices */
+    @media (hover: none) {
+      .flag {
+        user-select: text;
+        -webkit-user-select: text;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <div class="status">✓ Challenge Completed</div>
+
+    <h1>Congratulations, here is the FLAG </h1>
+
+    <div class="flag">
+      Flag{7h!$_!s_7He_F!4g}
+    </div>
+
+  </main>
+</body>
+</html>
